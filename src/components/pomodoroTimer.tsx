@@ -10,11 +10,29 @@ interface Props {
     cycles: number
 }
 export function PomodoroTimer (props:Props): JSX.Element {
-    const [mainTime, setMainTime] = React.useState(props.pomodoroTime)
+    const [mainTime, setMainTime] = React.useState(props.pomodoroTime);
+    const [timeCounting, setTimeCounting] = React.useState(false);
+    const [working, setWorking] = React.useState(false);
     
-    useInterval(() => {
-        setMainTime(mainTime - 1);
-    }, 1000);
+    React.useEffect(() => {
+        if(working) document.body.classList.add('working');
+    }, [working])
+
+    useInterval(
+        () => {
+            setMainTime(mainTime - 1);
+        },
+        timeCounting ? 1000 : null
+    );
+
+    const configureWork = () => {
+        setTimeCounting(true);
+        setWorking(true);
+    };
+
+    // useInterval(() => {
+    //     setMainTime(mainTime - 1);
+    // }, null);
     
     return (
         <div className="pomodoro">
@@ -22,9 +40,9 @@ export function PomodoroTimer (props:Props): JSX.Element {
             <Timer mainTimer={mainTime}></Timer>
 
             <div className="controls">
-             <Button text="teste" onClick={() => console.log(1)}></Button>
-                <Button text="teste" onClick={() => console.log(1)}></Button>
-             <Button text="teste" onClick={() => console.log(1)}></Button>
+             <Button text="Work" onClick={() => configureWork()}></Button>
+                {/* <Button text="teste" onClick={() => console.log(1)}></Button> */}
+             <Button text="Pause" onClick={() => setTimeCounting(false)}></Button>
             </div>
 
 
