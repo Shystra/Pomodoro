@@ -1,76 +1,108 @@
-*{
+* {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  
 }
 
-body{
+body {
   font-family: sans-serif;
-  background: #41e1ba;
-  transition: background-color 300ms ease-in-out;
-  line-height: 1.5;
-
+  height: 120vh;
+  margin: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(61, 0, 242, 1) 92%);
 }
 
-.container{
+.container {
   max-width: 640px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .working {
-  background: #ef5d50;
+  background: rgb(27, 25, 25);
+  background: linear-gradient(180deg, rgba(27, 25, 25, 1) 0%, rgba(255, 0, 0, 1) 100%, rgba(255, 0, 0, 1) 125%);
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.pomodoro{
-  background: #fff;
-  margin: 50px 20px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+.pomodoro {
+  position: relative;
+  width: 400px; /* Aumente o tamanho do círculo */
+  height: 400px; /* Aumente o tamanho do círculo */
+  border-radius: 50%;
+  border: 8px solid #fff;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .pomodoro h2 {
   font-size: 24px;
+  color: #fff;
   text-align: center;
-
+  position: absolute; /* Posicione o h2 fora do círculo */
+  top: -100px; /* Ajuste a posição vertical */
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 .pomodoro .timer {
-  font-size: 6rem;
-  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 41%;
 }
 
-.pomodoro .controls{
+.pomodoro .controls {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: row; /* Exibir os botões em linha */
+  align-items: center; /* Centralizar os botões verticalmente */
+  justify-content: space-around; /* Espaço uniforme entre os botões */
+  height: 10px; /* Defina a altura desejada para os botões */
+  margin: -1rem 0;
+  position: absolute; /* Posicionar os botões fora do círculo */
+  bottom: -70px; /* Ajuste a posição vertical */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.pomodoro button{
-  background: #41e1ba;
+.pomodoro button {
+  background: black;
+  color: #fff;
   border: none;
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 10px 35px;
   border-radius: 8px;
   transition: background-color 300ms ease-in-out;
-  margin: 20px auto;
+  margin: 0.5rem;
 }
 
-.working .pomodoro button{
- background-color: #ef5d50;
- color: #fff;
+.working .pomodoro button {
+  background-color: black;
+  color: #fff;
 }
 
-.pomodoro .datails{
-  margin: 20px 0;
+.button_resting .timer {
+  color: rgba(61, 0, 242, 1);
+}
+
+.button_working .timer {
+  color: rgba(255, 0, 0, 1);
+}
+
+.pomodoro .datails {
+  margin-top: 300px; /* Ajuste a margem para separar dos botões */
+  
+  color: #fff;
   text-align: center;
+  
 }
-
-
-
-
+.pomodoro .datails p{
+  margin-bottom: 10px;
+}

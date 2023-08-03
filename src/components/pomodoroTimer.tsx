@@ -80,7 +80,12 @@ export function PomodoroTimer (props:Props): JSX.Element {
 
     useEffect(() => {
         if(working) document.body.classList.add('working');
+        if(working) document.body.classList.add('button_working');
         if(resting) document.body.classList.remove('working');
+        if(resting) document.body.classList.remove('button_working')
+        if(resting) document.body.classList.add('button_resting');
+        
+
 
         if(mainTime > 0) return;
 
@@ -140,13 +145,13 @@ export function PomodoroTimer (props:Props): JSX.Element {
 
 
 
+
             <div className="datails">
              <p>Completed Cycles: {completedCycles}</p>
              <p>Time Workings: {secondsToTimes(fullWorkingTime)}</p>
              <p>Completed Pomodoros: {numberOfPomodoros}</p>
             
             </div>
-
         </div>
     )
 }
