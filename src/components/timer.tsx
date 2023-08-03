@@ -1,5 +1,5 @@
 
-import { secondsToTime } from '../utils/SecondsToTime';
+import { secondsToMinutes } from '../utils/SecondsToMinutes';
 
 interface Props{
     mainTimer: number
@@ -8,7 +8,7 @@ interface Props{
 export function Timer(props: Props): JSX.Element{
     return (
         <div className='timer'>
-            {secondsToTime(props.mainTimer)}
+            {secondsToMinutes(props.mainTimer)}
         </div>
     )
 
