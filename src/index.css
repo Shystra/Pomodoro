@@ -84,6 +84,8 @@ body {
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
+  cursor: pointer;
+  
 }
 
 .pomodoro button:hover{
