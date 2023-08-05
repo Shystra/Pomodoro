@@ -1,5 +1,11 @@
 # Pomodoro
 
+This is my first project than I used on EC2 - AmazonLinux. For this, I used Apache sistem for to read index.html. 
+All the comands on AmazonLinux was basead in Apache and Yam. 
+IP -> http://54.152.117.167/
+
+
+
 This method help the users to focus in a atividies or in other assuns. 
 
 This project was did in typescript and reactDOM using VITE for to render more speed.
