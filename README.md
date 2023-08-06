@@ -5,21 +5,21 @@ All the comands on AmazonLinux was basead in Apache and Yam.
 IP -> http://54.152.117.167/
 
 comands:
-sudo -i
-sudo yum update
-sudo yum install git
-git clone "repositor"
+$sudo -i
+$sudo yum update
+$sudo yum install git
+$git clone "repositor"
 
-sudo yum install httpd
-sudo systemctl start httpd
+$sudo yum install httpd
+$sudo systemctl start httpd
 
 later change DocumentRoot for your folder /dist
 
-sudo nano /etc/httpd/conf/httpd.conf
+$sudo nano /etc/httpd/conf/httpd.conf
 (sunch "DocumentRoot /var/www/html")
 change for "Document/Root /var/www/html/Pomodoro/dist"
 
-sudo systemctl restart httpd
+$sudo systemctl restart httpd
 
 
 
